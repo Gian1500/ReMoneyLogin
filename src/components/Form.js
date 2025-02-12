@@ -1,7 +1,7 @@
 import * as React from 'react';
 import logo from '../assets/images/logo-remoney.png';
 
-export default function Form() {
+export default function Form({ onSwitch, onSwitchForgot }) {
     return (
         <div className='bg-white px-10 py-10 rounded-3xl border-2 custom-border'>
             <img className='w-32 h-32 mb-4 mx-auto transition-transform duration-500 hover:-rotate-12' src={logo} alt="Logo RePagos" clas/>
@@ -33,7 +33,10 @@ export default function Form() {
                         />
                         <label className='ml-2 font-medium text-base mt' for='remember'>Recuérdame</label>
                     </div>
-                    <button className='font-medium text-base custom-text hover:scale-105 ease-in-out'>¿Olvidaste tu contraseña?</button>
+                    <button
+                        onClick={onSwitchForgot}  
+                        className='font-medium text-base custom-text hover:scale-105 ease-in-out'>¿Olvidaste tu contraseña?
+                    </button>
                 </div>
 
                 <div className='mt-8 flex flex-col gap-y-3'>
@@ -52,7 +55,10 @@ export default function Form() {
 
                 <div className='mt-8 flex flex-col items-center'>
                     <p className='font-medium text-base'>¿No tienes una cuenta?</p>
-                    <button className='mt-1 custom-text font-semibold text-base hover:scale-105 ease-in-out'>Regístrate</button>
+                    <button
+                        onClick={onSwitch}  
+                        className='mt-1 custom-text font-semibold text-base hover:scale-105 ease-in-out'>Regístrate
+                    </button>
                 </div>
             </div>
         </div>
